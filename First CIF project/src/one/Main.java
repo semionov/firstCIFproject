@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//hi
 		Scanner reader = new Scanner (System.in);
 		
 		System.out.println("Tell me your user name:");
