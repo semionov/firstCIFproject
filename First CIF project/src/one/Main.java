@@ -4,16 +4,30 @@ import java.util.Scanner;
 
 public class Main {
 	// scope number #1
-	
+
 	public static void main(String[] args) {
 		// scope number #2
-		//clientBuyProcess();
+
+		Scanner reader = new Scanner(System.in);
+		String word = "";
+		System.out.println("Write your name");
 		
 		
-		System.out.println(Editing.subEditing("Dmitry Semenov"));
-		//Operations.printHorizontal("Dima");
-		//Operations.printVertical("Dima");
-		//Operations.printDiagonal("Dima");
+		while (true) {
+			word = reader.nextLine();
+			
+			if (word.contains(" ")) {
+				EmailManagment.createAccount(word);
+				break;
+			} else {
+				System.out.println("Please introduce your name and surname separately!");
+			}
+		}
+
+		// Operations.operationsString(word);
+		// Editing.subEditing (word);
+
+		System.out.println("\nBye bye my friend...");
 	}
 
 	public static void clientBuyProcess() {
@@ -80,26 +94,25 @@ public class Main {
 		System.out.println("Your total discount is: " + totalDiscount);
 		System.out.println("Your should pay (with the discount): " + amountToPay);
 		System.out.println("Your should pay (with taxes): " + addTax(amountToPay) + "\n");
-		
-		
+
 	}
 
-	public static int addTax (int amountToPay) {
+	public static int addTax(int amountToPay) {
 		// scope number #10
 		double tax = 0.21;
-		
-		//i am doing an EXPLICIT casting to be able to use amountToPay as a DOUBLE
-		//double taxToPay = (double) amountToPay * tax;
-		//System.out.println(taxToPay);
-				
-		//i don't need an EXPLICIT casting cause taxToPay is double so it has ... decs...
-		double taxToPay =  amountToPay * tax;
-		
+
+		// i am doing an EXPLICIT casting to be able to use amountToPay as a DOUBLE
+		// double taxToPay = (double) amountToPay * tax;
+		// System.out.println(taxToPay);
+
+		// i don't need an EXPLICIT casting cause taxToPay is double so it has ...
+		// decs...
+		double taxToPay = amountToPay * tax;
+
 		double amountToPayWithTaxes = amountToPay + taxToPay;
-		
-		return (int) amountToPayWithTaxes ;
-		
+
+		return (int) amountToPayWithTaxes;
+
 	}
-	
-	
+
 }
